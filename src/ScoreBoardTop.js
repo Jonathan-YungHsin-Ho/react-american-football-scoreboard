@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Timer from './Timer';
 
 const ScoreBoardTop = props => {
   return (
@@ -11,7 +12,9 @@ const ScoreBoardTop = props => {
 
         <div className="home__score">{props.homeScore}</div>
       </div>
-      <div className="timer">00:03</div>
+      <div className="timer">
+        <Timer timer={props.timer} setTimer={props.setTimer} />
+      </div>
       <div className="away">
         <h2 className="away__name">Tigers</h2>
         <div className="away__score">{props.awayScore}</div>

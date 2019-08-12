@@ -20,6 +20,8 @@ const MoreButtons = props => {
     props.setAwayScore(0);
     props.setToGo(10);
     props.setBallOn(20);
+    props.setTimer(900);
+    props.setTimerActive(false);
   };
 
   const incrementer = (input, method, type) => {
@@ -31,7 +33,7 @@ const MoreButtons = props => {
     Math.floor(Math.random() * (max - min) + min);
 
   return (
-    <section className="buttons_wrapper" style={wrapper}>
+    <section className="more_buttons" style={wrapper}>
       <div>
         <button style={styles} onClick={() => newGame()}>
           New Game
