@@ -31,7 +31,7 @@ const MoreButtons = props => {
     Math.floor(Math.random() * (max - min) + min);
 
   return (
-    <div className="buttons_wrapper" style={wrapper}>
+    <section className="buttons_wrapper" style={wrapper}>
       <div>
         <button style={styles} onClick={() => newGame()}>
           New Game
@@ -82,7 +82,7 @@ const MoreButtons = props => {
           Randomize Field Position
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 
