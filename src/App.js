@@ -2,11 +2,20 @@
 import React, { useState } from 'react';
 import './App.css';
 import BottomRow from './BottomRow';
+import MoreButtons from './MoreButtons';
 
 function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
+  const initVal = 1;
+
   const [homeScore, setHomeScore] = useState(0);
   const [awayScore, setAwayScore] = useState(0);
+
+  const [down, setDown] = useState(initVal);
+  const [quarter, setQuarter] = useState(initVal);
+
+  const [toGo, setToGo] = useState(10);
+  const [ballOn, setBallOn] = useState(20);
 
   const handleScore = (team, points) => {
     team === 'home' && setHomeScore(homeScore + points);
@@ -30,7 +39,7 @@ function App() {
             <div className="away__score">{awayScore}</div>
           </div>
         </div>
-        <BottomRow />
+        <BottomRow quarter={quarter} down={down} toGo={toGo} ballOn={ballOn} />
       </section>
       <section className="buttons">
         <div className="homeButtons">
@@ -63,6 +72,20 @@ function App() {
           </button>
         </div>
       </section>
+      <MoreButtons
+        quarter={quarter}
+        setQuarter={setQuarter}
+        down={down}
+        setDown={setDown}
+        homeScore={homeScore}
+        setHomeScore={setHomeScore}
+        awayScore={awayScore}
+        setAwayScore={setAwayScore}
+        toGo={toGo}
+        setToGo={setToGo}
+        ballOn={ballOn}
+        setBallOn={setBallOn}
+      />
     </div>
   );
 }
